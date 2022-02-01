@@ -10,7 +10,7 @@ const config = {
   tagline: 'Make front-end learning easier',
   url: 'https://frontend-subject.gitlab.io',
   baseUrl: '/',
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/logo.png',
   organizationName: 'frontend-subject',
@@ -25,11 +25,6 @@ const config = {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           editUrl: 'https://github.com/frontend-subject/frontend-subject.github.io/edit/main/',
-        },
-        blog: {
-          showReadingTime: true,
-          editUrl:
-            'https://github.com/frontend-subject/frontend-subject.github.io/edit/main/blog/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),

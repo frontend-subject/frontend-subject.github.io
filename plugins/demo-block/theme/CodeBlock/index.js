@@ -1,18 +1,23 @@
-import React from 'react';
-import CodeBlock from '@theme-init/CodeBlock';
+import React from 'react'
+import CodeBlock from '@theme-init/CodeBlock'
+import BrowserOnly from '@docusaurus/BrowserOnly'
 import { DemoBlock } from '../../components/demo-block'
 
 const withLiveEditor = (Component) => {
   function WrappedComponent(props) {
-    const { vanilla, vue, react } = props;
+    const { vanilla, vue, react } = props
     if (vanilla || vue || react) {
-      return <DemoBlock {...props} />;
+      return (
+        <BrowserOnly fallback={'加载中...'}>
+          {() => <DemoBlock {...props} />}
+        </BrowserOnly>
+      )
     }
 
-    return <Component {...props} />;
+    return <Component {...props} />
   }
 
-  return WrappedComponent;
-};
+  return WrappedComponent
+}
 
-export default withLiveEditor(CodeBlock);
+export default withLiveEditor(CodeBlock)
