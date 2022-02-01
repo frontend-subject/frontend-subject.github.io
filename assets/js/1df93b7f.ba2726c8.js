@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkfrontend_subject=self.webpackChunkfrontend_subject||[]).push([[237],{9754:function(n,e,t){t.r(e),t.d(e,{default:function(){return c}});var u=t(412);function c(){return u.Z.canUseDOM&&(window.location.href="/docs/intro"),""}}}]);
