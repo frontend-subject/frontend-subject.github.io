@@ -38,6 +38,10 @@ const config = {
     ],
   ],
 
+  plugins: [
+    ['./plugins/demo-block/index.js', {}]
+  ],
+
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
