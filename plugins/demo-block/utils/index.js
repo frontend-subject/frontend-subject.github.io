@@ -7,7 +7,6 @@ function getCodeFromVanilla(code) {
 
 async function getCodeFromVue(code) {
   let template = getTagContent(code, 'template')
-
   let css = getTagContent(code, 'style')
   let js = getTagContent(code, 'script')
 
@@ -29,7 +28,25 @@ async function getCodeFromVue(code) {
   return { html: `<div id="app">${template}</div>`, css, js: runtimeJs }
 }
 
-function getCodeFromReact() {}
+async function getCodeFromReact(code) {
+  const Babel = await getBabel()
+  const transformedScript = Babel.transform(code, {
+      presets: ["es2015", "react"]
+  }).code
+
+  const runtimeJs = `
+    var { App, style } = (function(exports){
+      var module={};
+      module.exports=exports;
+      ${transformedScript};
+      return module.exports;
+    })({});
+    document.body.innerHTML += "<style>" + style + "</style>";
+    ReactDOM.render(React.createElement(App, null), document.getElementById('app'));
+  `
+
+  return { html: `<div id="app"></div>`, css: '', js: runtimeJs }
+}
 
 function getTagContent(code, tag) {
   let result = code.match(new RegExp(`<${tag}>([\\s\\S]+)</${tag}>`, 'gim'))

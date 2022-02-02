@@ -62,3 +62,20 @@ const box = document.getElementById('box');
   }
 </style>
 ```
+
+```jsx react
+export function App () {
+  useEffect(() => {
+    console.log('mounted')
+  }, [])
+  return (
+    <div id="box">123</div>
+  )
+}
+
+export const style = `
+  #box {
+    border: 1px solid red;
+  }
+`
+```
