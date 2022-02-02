@@ -74,6 +74,19 @@ export default {
 }
 ```
 
+### global add vue component
+
+```js title="scope.js"
+import Vue from 'vue'
+import Button from 'path/to/button'
+
+Vue.component(Button.name, Button)
+
+export default {
+  Vue
+}
+```
+
 ### local import for codepen
 
 #### react
@@ -188,6 +201,34 @@ export const style = `
 `
 ```
 
+## desc
+
+### react
+
+```jsx
+/**
+ * @title: name 
+ * @desc: xxx
+ */
+
+import { debounce } from 'https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js'
+
+export function App () {
+  useEffect(() => {
+    console.log('mounted')
+  }, [])
+  return (
+    <div id="box"></div>
+  )
+}
+
+export const style = `
+  #box {
+    border: 1px solid red;
+  }
+`
+```
+
 ## settings
 
 ### global settings
@@ -196,13 +237,14 @@ export const style = `
 {
   babel: true, // 是否使用 babel 解析脚本，默认启用
   lib: { // 声明基础库对应的全局变量，用于 import { bar, baz } from 'foo'
-    'https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js': 'Lodash'
+    'https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js': 'lodash'
   },
   jsfiddle: false, // 支持跳转到 jsfiddle
   codepen: false, // 支持跳转到 codepen
   codesandbox: false, // 支持跳转到 codesandbox
   live: false, // 支持实时编辑
   horizontal: false, // 横向布局
+  iframe: true, // 使用 iframe 渲染
 }
 ```
 
@@ -210,10 +252,9 @@ export const style = `
 
 ### vanilla 
 
-```js
+\```html vanilla live=false&horizontal=false
 
-` ``html vanilla live=false&horizontal=false
 // xxx
-` ``
 
-```
+\```
+
