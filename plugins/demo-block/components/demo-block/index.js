@@ -3,6 +3,7 @@ import {
   getCodeFromVanilla,
   getCodeFromVue,
   getCodeFromReact,
+  getType,
 } from '../../utils'
 import { Runner } from '../runner'
 import { Playground } from '../playground'
@@ -14,8 +15,8 @@ const GET_CODE_FUNCTION = {
   react: getCodeFromReact,
 }
 
-function DemoBlock(props) {
-  const [code, setCode] = useState(props.children)
+function DemoBlock({ children, metastring }) {
+  const [code, setCode] = useState(children)
   const [scope, setScope] = useState(null)
   const [runtimeCode, setRuntimeCode] = useState('')
 
@@ -27,10 +28,10 @@ function DemoBlock(props) {
   )
 
   useEffect(() => {
-    if (code !== props.children) {
-      setCode(props.children)
+    if (code !== children) {
+      setCode(children)
     }
-  }, [props.children])
+  }, [children])
 
   useEffect(() => {
     ;(async () => {
@@ -41,7 +42,7 @@ function DemoBlock(props) {
 
   useEffect(() => {
     ;(async () => {
-      const runtimeCode = await GET_CODE_FUNCTION[props.metastring](code)
+      const runtimeCode = await GET_CODE_FUNCTION[getType(metastring)](code)
       setRuntimeCode(runtimeCode)
     })()
   }, [code])
@@ -49,7 +50,7 @@ function DemoBlock(props) {
   return (
     <div className="docusaurus-demo-block">
       <Playground
-        type={props.metastring}
+        type={getType(metastring)}
         value={code}
         onChange={(value) => handleCodeChange.run(value)}
       />

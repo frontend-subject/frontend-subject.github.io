@@ -49,4 +49,8 @@ function getBabel() {
   return babelPromise
 }
 
-export { getCodeFromVanilla, getCodeFromVue, getCodeFromReact }
+function getType(metastring) {
+  return metastring.split(' ')[0]
+}
+
+export { getCodeFromVanilla, getCodeFromVue, getCodeFromReact, getType }

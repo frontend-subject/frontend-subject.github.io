@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-```html vanilla
+```html vanilla live=false horizontal=false
 <html>
   <div id="box">box</div>
 </html>
@@ -27,7 +27,7 @@ const box = document.getElementById('box');
   export default {
     data() {
       return {
-        foo: 1
+        foo: "foo"
       }
     },
     created () {
