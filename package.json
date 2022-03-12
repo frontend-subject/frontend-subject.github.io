@@ -16,9 +16,9 @@
   },
   "dependencies": {
     "@babel/standalone": "^7.16.12",
-    "@docusaurus/core": "2.0.0-beta.9",
-    "@docusaurus/preset-classic": "2.0.0-beta.9",
-    "@docusaurus/theme-translations": "^2.0.0-beta.15",
+    "@docusaurus/core": "^2.0.0-beta.17",
+    "@docusaurus/preset-classic": "^2.0.0-beta.17",
+    "@docusaurus/theme-translations": "^2.0.0-beta.17",
     "@mdx-js/react": "^1.6.21",
     "@svgr/webpack": "^5.5.0",
     "ahooks": "^3.1.9",
@@ -27,6 +27,9 @@
     "buffer": "^6.0.3",
     "clsx": "^1.1.1",
     "codemirror": "^5.65.1",
+    "docusaurus-plugin-demo-block": "^0.2.2",
+    "docusaurus-plugin-drawio": "^0.1.5",
+    "docusaurus-plugin-mindmap": "^0.1.3",
     "file-loader": "^6.2.0",
     "path-browserify": "^1.0.1",
     "prism-react-renderer": "^1.2.1",
@@ -36,7 +39,7 @@
     "vue": "^3.2.29"
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "2.0.0-beta.9",
+    "@docusaurus/module-type-aliases": "^2.0.0-beta.17",
     "@tsconfig/docusaurus": "^1.0.4",
     "typescript": "^4.3.5"
   },

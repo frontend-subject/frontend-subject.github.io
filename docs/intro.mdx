@@ -1,0 +1,38 @@
+---
+sidebar_position: 1
+---
+
+```html vanilla
+<template>
+  <div id="box">box</div>
+</template>
+
+<style>
+  #box {
+    border: 1px solid red;
+  }
+</style>
+
+<script>
+var box = document.getElementById('box');
+</script>
+
+```
+
+import Mindmap from '@theme/Mindmap';
+
+<Mindmap
+  content={`
+- 前端
+-- HTML
+-- CSS
+-- JS
+--- 闭包
+--- 原型链
+`}
+/>
+
+import Drawio from '@theme/Drawio'
+import simpleGraph from '!!raw-loader!./drawio/demo.drawio';
+
+<Drawio content={simpleGraph} />

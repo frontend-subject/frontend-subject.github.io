@@ -34,7 +34,9 @@ const config = {
   ],
 
   plugins: [
-    ['./plugins/demo-block/index.js', {}]
+    ['docusaurus-plugin-demo-block', {}],
+    ['docusaurus-plugin-drawio', {}],
+    ['docusaurus-plugin-mindmap', {}],
   ],
 
   themeConfig:
