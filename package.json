@@ -15,18 +15,14 @@
     "typecheck": "tsc"
   },
   "dependencies": {
-    "@babel/standalone": "^7.16.12",
     "@docusaurus/core": "^2.0.0-beta.17",
     "@docusaurus/preset-classic": "^2.0.0-beta.17",
     "@docusaurus/theme-translations": "^2.0.0-beta.17",
     "@mdx-js/react": "^1.6.21",
     "@svgr/webpack": "^5.5.0",
-    "ahooks": "^3.1.9",
     "assert": "^2.0.0",
-    "babel-plugin-transform-async-to-promises": "^0.8.18",
     "buffer": "^6.0.3",
     "clsx": "^1.1.1",
-    "codemirror": "^5.65.1",
     "docusaurus-plugin-demo-block": "^0.2.2",
     "docusaurus-plugin-drawio": "^0.1.5",
     "docusaurus-plugin-mindmap": "^0.1.3",
